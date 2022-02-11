@@ -58,3 +58,34 @@ img{
     color: #0074D9
 }
 
+#footer{
+    border: 1px solid green;
+    width: 70rem;
+    margin: 3rem auto;
+    box-shadow: 10px 10px 20px #AAAAAA;
+
+}
+
+#footer h2{
+    color: lightslategray;
+    text-align: center;
+
+}
+
+#footer div div:nth-child(0){
+    border: 1px solid yellow;
+    margin: 40px;
+    text-align: center;
+    
+    
+}
+
+table, tr, td, th{
+    border: 1px solid red;
+    border-collapse: collapse;
+    margin: auto;
+    text-align: center;
+    padding: 5px 25px;
+}
+
+
