@@ -88,4 +88,23 @@ table, tr, td, th{
     padding: 5px 25px;
 }
 
+label{
+ display: block;
+ width: 10rem;
+ margin: auto;
+}
+#suc{
+    margin-left: 42rem;
+    margin-top: -20px;
+}
 
+#footer button{
+    padding: 0px 20px;
+    color: black;
+    font-size: 20px;
+    border:1px solid black;
+    box-shadow: 2px 2px 20px red;
+    background-color: rgb(228, 159, 159);
+    float: right;
+    
+}
