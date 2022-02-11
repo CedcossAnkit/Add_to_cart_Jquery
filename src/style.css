@@ -1,3 +1,60 @@
 body{
     font-family: sans-serif;
+    background:lightblue;
 }
+
+
+#main{
+    width: 70rem;
+    padding: 20px 30px;
+    margin: auto;
+    box-shadow: 10px 10px 20px #AAAAAA;
+
+
+}
+
+img{
+    height: 5rem;
+    width: 5rem;
+    padding: 10px;
+    box-shadow: -2px 5px 20px #a58080;
+
+}
+
+#main div{
+    display: inline-block;
+    margin: 10px;
+    width: 10rem;
+    padding: 20px;
+    text-align: center;
+
+}
+
+#main div li{
+    list-style-type: none;
+    text-align: center;
+}
+#main div li button{
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 9rem;
+    height: 2rem;
+    box-shadow: 2px 2px  20px red;
+    background: rgb(109, 109, 185);
+    color: white;
+    
+}
+
+#main div h3{
+ display: inline-block;
+ color: #001f3f;
+ padding: 0px 10px;
+}
+
+#header h1{
+    text-align: center;
+    color: #0074D9
+}
+
