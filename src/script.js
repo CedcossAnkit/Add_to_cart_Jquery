@@ -1,14 +1,55 @@
 //Globle array and var.
 var products = [
-    { "id": 101, "name": "Basket Ball", "image": "basketball.png", "price": 150 },
-    { "id": 102, "name": "Football", "image": "football.png", "price": 120 },
-    { "id": 103, "name": "Soccer", "image": "soccer.png", "price": 110 },
-    { "id": 104, "name": "Table Tennis", "image": "table-tennis.png", "price": 130 },
-    { "id": 105, "name": "Tennis", "image": "tennis.png", "price": 100 }];
+    { "id": 101, "name": "Basket Ball", "image": "basketball.png", "price": 150,"quantity":1},
+    { "id": 102, "name": "Football", "image": "football.png", "price": 120,"quantity":1 },
+    { "id": 103, "name": "Soccer", "image": "soccer.png", "price": 110 ,"quantity":1},
+    { "id": 104, "name": "Table Tennis", "image": "table-tennis.png", "price": 130 ,"quantity":1},
+    { "id": 105, "name": "Tennis", "image": "tennis.png", "price": 100 ,"quantity":1}];
 
 var cartArr = [];
-var obj = {};
-var quantity = {};
+var obj = {}; 
+var basket=0,footbal=0,soccer=0,table=0,tennis=0;
+var basket=""
+var quantity = {
+    basket:basket,
+    footbal:footbal,
+    soccer:soccer,
+    table:table,
+    tennis:tennis,
+};
+
+//incress quantity
+function IncrssQuantity(id){
+    if(id==101){
+        basket++;
+        displayCart();
+    }
+    else if(id==102){
+        footbal++;
+        displayCart();
+
+    }
+    else if(id==103){
+        soccer++;
+        displayCart();
+
+    }
+    else if(id==104){
+        table++;
+        displayCart();
+
+    }
+    else if(id==105){
+        tennis++;
+        displayCart();
+
+    }
+    
+    // for(var i=0;i<products.length;i++){
+    //     if(products[i].id==id && bas=)
+    // }
+}
+
 //dislay()--display all iteam of products[] raay;
 function Display() {
     var lst = "";
@@ -35,16 +76,19 @@ function CheckIteam(id) {
 
 }
 
+
+
 function addTOcart(id) {
     if (cartArr.length == 0) {
         addTOarray(id);
     }
     else if (CheckIteam(id) == false) {
-
+        incressQuant(id); 
         
     }
     else if (CheckIteam(id) == true) {
         addTOarray(id);
+        IncrssQuantity(id);
         console.log("added");
         // $('#suc').text('Iteam added Sucesfully!');
 
@@ -64,6 +108,7 @@ function addTOarray(id) {
                 pname: products[i].name,
                 pimage: products[i].image,
                 pprice: String(products[i].price),
+                quantity:products[i].quantity
             };
 
             console.log(obj[i]);
@@ -88,7 +133,9 @@ function displayCart() {
             <td>"+ cartArr[i].pid + "</td>\
             <td>"+ cartArr[i].pname + "</td>\
             <td>"+ cartArr[i].pprice + "$</td>\
-            <td><button onclick='updateQuantity("+ cartArr[i].pid + ")'>+</button></td>\
+            <td><p></p>\<h3>"+cartArr[i].quantity+"</h3>\
+            <button onclick='incressQuant("+ cartArr[i].pid + ")'>+</button>\
+            </td>\
             <td><buttton onclick='deleteIteam("+ cartArr[i].pid + ")'>❌</buttton></td>\
             </tr>";
         flag = 0;
@@ -128,4 +175,16 @@ $(document).ready(function () {
 function updateQuantity(id) {
     cartArr.push(id);
 
+}
+
+function incressQuant(id){
+    
+    for(var i=0;i<cartArr.length;i++){
+        if(cartArr[i].pid==id){
+            cartArr[i].quantity+=1;
+
+        }
+        displayCart();
+
+    }
 }
